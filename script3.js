@@ -69,8 +69,8 @@ function createConfetti() {
 
 function createExplosion() {
     const colors = ['#ff0000', '#ff4500', '#ff6347', '#ff8c00'];
-    const explosionCenterX = 50; // center of container
-    const explosionCenterY = 50; // center of container
+    const explosionCenterX = 50;
+    const explosionCenterY = 50;
     
     for (let i = 0; i < 50; i++) {
         const piece = document.createElement('div');
@@ -104,8 +104,8 @@ function createFireworks() {
     
     for (let i = 0; i < 8; i++) {
         setTimeout(() => {
-            const x = Math.random() * 80 + 10; // 10-90% of container
-            const y = Math.random() * 80 + 10; // 10-90% of container
+            const x = Math.random() * 80 + 10;
+            const y = Math.random() * 80 + 10;
             
             for (let j = 0; j < 12; j++) {
                 const particle = document.createElement('div');
