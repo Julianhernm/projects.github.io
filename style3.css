@@ -11,52 +11,49 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1rem; 
 }
 
 h1 {
-    font-family: cursive;
-    margin-bottom: 40px;
+    margin-bottom: 2rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 2rem;
 }
 
 .container {
     width: 90%;
     max-width: 500px;
-    height: auto;
     background: linear-gradient(rgb(149, 214, 0), black);
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 1.5rem;
     border-radius: 10px;
-    position: relative;
-    overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
 }
 
 .input-user,
 button {
-    background: white;
-    padding: 10px;
+    padding: 0.8rem;
     border: none;
     border-radius: 5px;
-    margin-top: 15px;
-    margin-bottom: 30px;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
 }
 
 button {
     width: 100%;
-    font-family: cursive;
     background-color: rgb(149, 214, 0);
     border: solid green;
     border-radius: 20px 0;
-    font-size: 25px;
+    font-size: 1.3rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
 }
 
 button:hover {
@@ -70,8 +67,7 @@ button:active {
 
 .input-user {
     width: 55%;
-    border: none;
-    font-family: cursive;
+    font-size: 1rem;
     transition: all 0.3s ease;
 }
 
@@ -81,30 +77,21 @@ button:active {
 }
 
 label {
-    font-size: 20px;
-    font-family: cursive;
+    font-size: 1.2rem;
 }
 
 label:hover {
     text-decoration: underline;
 }
 
-h2 {
+h2, #resultado {
     display: none;
-    font-family: cursive;
-    margin: 30px;
-}
-
-#resultado {
-    display: none;
-    font-family: cursive;
-    margin: 30px;
+    margin: 2rem;
     text-align: center;
     font-size: 1.3rem;
-    padding: 20px;
+    padding: 1.2rem;
     border-radius: 10px;
     transition: all 0.5s ease;
-    position: relative;
     z-index: 10;
 }
 
@@ -145,7 +132,7 @@ h2 {
     100% { transform: scale(1); }
 }
 
-.confetti {
+.confetti, .explosion-piece {
     position: absolute;
     width: 10px;
     height: 10px;
@@ -154,11 +141,7 @@ h2 {
 }
 
 .explosion-piece {
-    position: absolute;
-    width: 8px;
-    height: 8px;
     border-radius: 50%;
-    opacity: 0;
 }
 
 #confetti-container, #explosion-container {
@@ -192,4 +175,34 @@ h2 {
     0%, 100% { transform: translateX(0); }
     10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
     20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+/* MEDIA QUERY PARA MÓVILES */
+@media (max-width: 480px) {
+    body {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 1.1rem;
+        padding: 0.9rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    #resultado {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
 }
