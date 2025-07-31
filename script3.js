@@ -1,5 +1,5 @@
 const valor = document.getElementById("monster");
-const monster = ["Blanca", "Negra", "Amarillo"];
+const monster = ["Blanca"];
 const form = document.getElementById("formulario");
 const resultado = document.getElementById("resultado");
 const confettiContainer = document.getElementById("confetti-container");
