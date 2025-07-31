@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: azure;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: cursive;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    background: linear-gradient(rgb(149, 214, 0), black);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.input-user,
+button {
+    background: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+button {
+    width: 100%;
+    font-family: cursive;
+    background-color: rgb(149, 214, 0);
+    border: solid green;
+    border-radius: 20px 0;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background: rgb(116, 158, 9);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.input-user {
+    width: 55%;
+    border: none;
+    font-family: cursive;
+    transition: all 0.3s ease;
+}
+
+.input-user:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(149, 214, 0, 0.8);
+}
+
+label {
+    font-size: 20px;
+    font-family: cursive;
+}
+
+label:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    display: none;
+    font-family: cursive;
+    margin: 30px;
+}
+
+#resultado {
+    display: none;
+    font-family: cursive;
+    margin: 30px;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.acierto {
+    background-color: #6aff6a;
+    color: black;
+    animation: pop 0.8s ease-out, glow 2s infinite alternate;
+    box-shadow: 0 0 20px rgba(106, 255, 106, 0.7);
+}
+
+.fallo {
+    background-color: #ff4b4b;
+    color: white;
+    animation: shake 0.5s ease-in-out, pulse 1s 3;
+    box-shadow: 0 0 20px rgba(255, 75, 75, 0.7);
+}
+
+@keyframes pop {
+    0% { transform: scale(0.7); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px rgba(106, 255, 106, 0.7); }
+    to { box-shadow: 0 0 20px rgba(106, 255, 106, 1), 0 0 30px rgba(106, 255, 106, 0.7); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    opacity: 0;
+}
+
+.explosion-piece {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+#confetti-container, #explosion-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 5px;
+    animation: firework-animation 1s ease-out forwards;
+}
+
+@keyframes firework-animation {
+    0% { transform: translate(0, 0); opacity: 1; }
+    100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
+}
+
+.container-shake {
+    animation: container-shake 0.5s linear;
+}
+
+@keyframes container-shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
