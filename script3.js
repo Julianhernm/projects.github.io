@@ -20,12 +20,12 @@ function choice() {
     explosionContainer.innerHTML = '';
 
     if (monster.includes(formateada)) {
-        resultado.textContent = "🎉 ¡Sí la adivinaste! Qué gran amiga eres.";
+        resultado.textContent = "🎉 Sí la adivinaste!!! Qué gran amiga eres.";
         resultado.classList.add("acierto");
         createConfetti();
         createFireworks();
     } else {
-        resultado.textContent = "💔 ¡No la adivinaste! Qué pésima amiga eres.";
+        resultado.textContent = "😔 No la adivinaste!! Qué mala amiga eres.";
         resultado.classList.add("fallo");
         container.classList.add("container-shake");
         createExplosion();
@@ -55,7 +55,7 @@ function createConfetti() {
         
         confettiContainer.appendChild(confetti);
         
-        // Add animation dynamically
+
         const style = document.createElement('style');
         style.textContent = `
             @keyframes confetti-fall {
@@ -70,7 +70,7 @@ function createConfetti() {
 function createExplosion() {
     const colors = ['#ff0000', '#ff4500', '#ff6347', '#ff8c00'];
     const explosionCenterX = 50;
-    const explosionCenterY = 50;
+    const explosionCenterY = 50; 
     
     for (let i = 0; i < 50; i++) {
         const piece = document.createElement('div');
@@ -87,7 +87,6 @@ function createExplosion() {
         
         explosionContainer.appendChild(piece);
         
-        // Add animation dynamically
         const style = document.createElement('style');
         style.textContent = `
             @keyframes explode {
@@ -102,12 +101,12 @@ function createExplosion() {
 function createFireworks() {
     const colors = ['#ff0000', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#ff00ff'];
     
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 20; i++) {
         setTimeout(() => {
             const x = Math.random() * 80 + 10;
             const y = Math.random() * 80 + 10;
             
-            for (let j = 0; j < 12; j++) {
+            for (let j = 0; j < 50; j++) {
                 const particle = document.createElement('div');
                 particle.classList.add('firework');
                 particle.style.left = x + '%';
@@ -121,8 +120,7 @@ function createFireworks() {
                 particle.style.setProperty('--ty', `${Math.sin(angle) * distance}px`);
                 
                 confettiContainer.appendChild(particle);
-                
-                // Remove after animation
+
                 setTimeout(() => {
                     particle.remove();
                 }, 1000);
